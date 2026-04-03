@@ -1,8 +1,13 @@
 from time import sleep, time
 import csv
+import os
 from datetime import datetime
 from neurosdk.scanner import Scanner
 from neurosdk.cmn_types import SensorFamily, SensorCommand
+
+OUTPUT_DIR = "./"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+OUTPUT_CSV = os.path.join(OUTPUT_DIR, f"brainbit_eeg_{datetime.now():%Y-%m-%d_%H-%M-%S}.csv")
 
 RECORD_SECONDS = 30  # Adjust recording time here
 
