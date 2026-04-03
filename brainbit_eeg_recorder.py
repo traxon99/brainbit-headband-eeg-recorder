@@ -4,15 +4,11 @@ from datetime import datetime
 from neurosdk.scanner import Scanner
 from neurosdk.cmn_types import SensorFamily, SensorCommand
 
-# run using py -3.12 brainbit_EEG_recorder.py
-
-OUTPUT_CSV = f"brainbit_eeg_{datetime.now():%Y-%m-%d_%H-%M-%S}.csv"
-
 RECORD_SECONDS = 30  # Adjust recording time here
 
 
 def main():
-    scanner = Scanner([SensorFamily.LEHeadPhones2])
+    scanner = Scanner([SensorFamily.SensorLEBrainBit2])
 
     print("Scanning for devices for 10 seconds...")
     scanner.start()
